@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Blog Images</h1>
+
+{% for line in contents %}
+<h3><a href="{% url 'blog_detail' line.pk %}">{{ line.title }}</a></h3> &nbsp
+<img src="{{ line.image.url }}" width="300" height="150"> <br><br>
+{{ line.body }} &nbsp&nbsp;<br><br>
+{% endfor %}
+{% endblock %}
